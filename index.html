@@ -25,7 +25,7 @@ position:relative;
 cursor:pointer;
 }
 
-/* ⭐ Estrellas */
+/* ⭐ Fondo estrellas */
 body::before{
 content:"";
 position:absolute;
@@ -66,13 +66,21 @@ from{ transform:translateY(-10px); opacity:1;}
 to{ transform:translateY(100vh); opacity:0;}
 }
 
+/* 📝 Contenido principal */
+.content{
+position:relative;
+z-index:3;
+display:flex;
+flex-direction:column;
+align-items:center;
+}
+
 /* ❤️ Corazón */
 .heart{
 font-size:45px;
 color:#ff0000;
 text-shadow:0 0 25px #ffd700, 0 0 40px #ffcc00;
 animation:pulse 1.5s infinite;
-z-index:2;
 }
 
 @keyframes pulse{
@@ -82,7 +90,6 @@ z-index:2;
 }
 
 h1,h2,h3{
-z-index:2;
 text-align:center;
 }
 
@@ -110,7 +117,7 @@ text-shadow:0 0 20px gold;
 .flowers-container{
 display:flex;
 gap:120px;
-z-index:2;
+margin-top:20px;
 }
 
 /* 🖼 Imágenes */
@@ -118,8 +125,7 @@ z-index:2;
 position:absolute;
 top:20px;
 right:20px;
-width:400px;
-max-width:40vw;
+width:300px;
 z-index:2;
 }
 
@@ -127,8 +133,7 @@ z-index:2;
 position:absolute;
 bottom:20px;
 left:20px;
-width:400px;
-max-width:40vw;
+width:300px;
 z-index:2;
 }
 
@@ -164,7 +169,6 @@ top:170px;
 left:50%;
 transform:translateX(-50%);
 border-radius:10px;
-z-index:0;
 }
 
 .petals{
@@ -172,7 +176,6 @@ position:absolute;
 width:200px;
 height:200px;
 animation: rotateFlower 12s linear infinite;
-z-index:2;
 }
 
 @keyframes rotateFlower{
@@ -209,7 +212,6 @@ border-radius:50%;
 top:60px;
 left:50%;
 transform:translateX(-50%);
-z-index:3;
 box-shadow:0 0 25px #000;
 }
 
@@ -220,7 +222,6 @@ height:45px;
 background:#43a047;
 border-radius:0 90px 0 90px;
 top:240px;
-z-index:1;
 }
 
 .leaf.left{
@@ -237,7 +238,6 @@ transform:rotate(35deg);
 
 <body>
 
-<!-- 🎵 Audio -->
 <audio id="musica" loop>
 <source src="cancion.mp3" type="audio/mpeg">
 </audio>
@@ -260,7 +260,6 @@ document.querySelector(".particles").appendChild(span);
 }
 </script>
 
-<!-- 🖼 Personajes -->
 <div class="anime-top">
 <img src="senku.gif" alt="Senku">
 </div>
@@ -269,6 +268,7 @@ document.querySelector(".particles").appendChild(span);
 <img src="mao.gif" alt="Mao">
 </div>
 
+<div class="content">
 <h1>Para ti ❤️</h1>
 <h2>Princesa Nay 💛</h2>
 <h3>Feliz San Valentín</h3>
@@ -307,9 +307,12 @@ document.querySelector(".particles").appendChild(span);
 </div>
 
 </div>
+</div>
 
 </body>
 </html>
+
+
 
 
 
