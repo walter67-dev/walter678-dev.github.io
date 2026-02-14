@@ -4,8 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Para ti Princesa Nay 🌻</title>
+
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
+
 body{
   height:100vh;
   display:flex;
@@ -16,7 +18,9 @@ body{
   overflow:hidden;
   font-family:Arial, sans-serif;
   position:relative;
+  cursor:pointer;
 }
+
 body::before{
   content:"";
   position:absolute;
@@ -28,52 +32,42 @@ body::before{
   opacity:0.3;
   z-index:0;
 }
-@keyframes moveStars{from{transform:translate(0,0);}to{transform:translate(-400px,-400px);}}
-.particles{position:absolute;width:100%;height:100%;pointer-events:none;z-index:1;}
-.particles span{position:absolute;width:4px;height:4px;background:gold;border-radius:50%;animation:fall linear infinite;}
-@keyframes fall{from{transform:translateY(-10px);opacity:1;}to{transform:translateY(100vh);opacity:0;}}
-.heart{font-size:45px;color:#ff0000;text-shadow:0 0 25px #ffd700,0 0 40px #ffcc00;animation:pulse 1.5s infinite;z-index:2;}
-@keyframes pulse{0%,100%{transform:scale(1);}50%{transform:scale(1.2);}}
-h1,h2,h3{text-align:center;z-index:2;}
-h1{color:#ff3b3b;font-size:32px;text-shadow:0 0 20px #ffcc00;margin-bottom:10px;}
-h2{color:#ffcc00;font-size:42px;text-shadow:0 0 25px red;margin-bottom:10px;}
-h3{color:#ff4d4d;font-size:28px;text-shadow:0 0 20px gold;margin-bottom:20px;}
-.anime-top{position:absolute;top:20px;right:20px;width:400px;max-width:40vw;z-index:2;}
-.anime-bottom{position:absolute;bottom:20px;left:20px;width:400px;max-width:40vw;z-index:2;}
-.anime-top img,.anime-bottom img{width:100%;height:auto;}
-</style>
-</head>
-<body>
 
-<audio controls loop>
-  <source src="cancion.mp3" type="audio/mp3">
-</audio>
-
-<div class="particles"></div>
-<script>
-for(let i=0;i<40;i++){
-  let span=document.createElement("span");
-  span.style.left=Math.random()*100+"%";
-  span.style.animationDuration=(4+Math.random()*4)+"s";
-  span.style.animationDelay=Math.random()*5+"s";
-  document.querySelector(".particles").appendChild(span);
+@keyframes moveStars{
+  from{transform:translate(0,0);}
+  to{transform:translate(-400px,-400px);}
 }
-</script>
 
-<div class="anime-top">
-  <img src="senku.gif" alt="Senku">
-</div>
-<div class="anime-bottom">
-  <img src="mao.gif" alt="Mao">
-</div>
+.particles{
+  position:absolute;
+  width:100%;
+  height:100%;
+  pointer-events:none;
+  z-index:1;
+}
 
-<h1>Para ti ❤️</h1>
-<h2>Princesa Nay 💛</h2>
-<h3>Feliz San Valentín</h3>
-<div class="heart">❤️</div>
+.particles span{
+  position:absolute;
+  width:4px;
+  height:4px;
+  background:gold;
+  border-radius:50%;
+  animation:fall linear infinite;
+}
 
-</body>
-</html>
+@keyframes fall{
+  from{transform:translateY(-10px);opacity:1;}
+  to{transform:translateY(100vh);opacity:0;}
+}
+
+.heart{
+  font-size:45px;
+  color:#ff0000;
+  text-shadow:0 0 25px #ffd700,0 0 40px #ffcc00;
+  animation:pulse 1.5s infinite;
+  z-index
+
+
 
 
 
