@@ -4,263 +4,67 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Para ti Princesa Nay 🌻</title>
-
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
+*{margin:0;padding:0;box-sizing:border-box;}
 body{
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-flex-direction:column;
-background:linear-gradient(to top,#0f2027,#1e3c72,#2a5298);
-overflow:hidden;
-font-family:Arial, Helvetica, sans-serif;
-position:relative;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  background:linear-gradient(to top,#0f2027,#1e3c72,#2a5298);
+  overflow:hidden;
+  font-family:Arial, sans-serif;
+  position:relative;
 }
-
-/* ⭐ Estrellas */
 body::before{
-content:"";
-position:absolute;
-width:200%;
-height:200%;
-background-image:radial-gradient(white 1px, transparent 1px);
-background-size:60px 60px;
-animation: moveStars 80s linear infinite;
-opacity:0.3;
-z-index:0;
+  content:"";
+  position:absolute;
+  width:200%;
+  height:200%;
+  background-image:radial-gradient(white 1px, transparent 1px);
+  background-size:60px 60px;
+  animation:moveStars 80s linear infinite;
+  opacity:0.3;
+  z-index:0;
 }
-
-@keyframes moveStars{
-from{ transform:translate(0,0); }
-to{ transform:translate(-400px,-400px); }
-}
-
-/* 🌟 Partículas */
-.particles{
-position:absolute;
-width:100%;
-height:100%;
-pointer-events:none;
-z-index:1;
-}
-
-.particles span{
-position:absolute;
-width:4px;
-height:4px;
-background:gold;
-border-radius:50%;
-animation: fall linear infinite;
-}
-
-@keyframes fall{
-from{ transform:translateY(-10px); opacity:1;}
-to{ transform:translateY(100vh); opacity:0;}
-}
-
-/* ❤️ Corazón */
-.heart{
-font-size:45px;
-color:#ff0000;
-text-shadow:0 0 25px #ffd700, 0 0 40px #ffcc00;
-animation:pulse 1.5s infinite;
-z-index:2;
-}
-
-@keyframes pulse{
-0%{ transform:scale(1);}
-50%{ transform:scale(1.2);}
-100%{ transform:scale(1);}
-}
-
-/* 🎀 Textos */
-h1,h2,h3{
-z-index:2;
-text-align:center;
-}
-
-h1{
-color:#ff3b3b;
-margin-bottom:10px;
-font-size:32px;
-text-shadow:0 0 20px #ffcc00;
-}
-
-h2{
-color:#ffcc00;
-margin-bottom:10px;
-font-size:42px;
-text-shadow:0 0 25px red;
-}
-
-h3{
-color:#ff4d4d;
-margin-bottom:20px;
-font-size:28px;
-text-shadow:0 0 20px gold;
-}
-
-.flowers-container{
-display:flex;
-gap:120px;
-z-index:2;
-}
-
-/* 🖼 Imágenes */
-.anime-top{
-position:absolute;
-top:20px;
-right:20px;
-width:400px;
-max-width:40vw;
-z-index:2;
-}
-
-.anime-bottom{
-position:absolute;
-bottom:20px;
-left:20px;
-width:400px;
-max-width:40vw;
-z-index:2;
-}
-
-.anime-top img,
-.anime-bottom img{
-width:100%;
-height:auto;
-}
-
-/* 🌻 Flor */
-.flower{
-position:relative;
-width:200px;
-height:350px;
-}
-
-.flower-wrapper{
-position:relative;
-animation: sway 4s ease-in-out infinite alternate;
-}
-
-@keyframes sway{
-from{ transform:rotate(-3deg); }
-to{ transform:rotate(3deg); }
-}
-
-.stem{
-position:absolute;
-width:10px;
-height:200px;
-background:#2e7d32;
-top:170px;
-left:50%;
-transform:translateX(-50%);
-border-radius:10px;
-z-index:0;
-}
-
-.petals{
-position:absolute;
-width:200px;
-height:200px;
-animation: rotateFlower 12s linear infinite;
-z-index:2;
-}
-
-@keyframes rotateFlower{
-from{ transform:rotate(0deg); }
-to{ transform:rotate(360deg); }
-}
-
-.petal{
-position:absolute;
-width:55px;
-height:110px;
-background:linear-gradient(to bottom,#fff176,#fbc02d);
-border-radius:50%;
-left:50%;
-top:50%;
-transform-origin:center bottom;
-}
-
-.petal:nth-child(1){ transform:translate(-50%,-100%) rotate(0deg); }
-.petal:nth-child(2){ transform:translate(-50%,-100%) rotate(45deg); }
-.petal:nth-child(3){ transform:translate(-50%,-100%) rotate(90deg); }
-.petal:nth-child(4){ transform:translate(-50%,-100%) rotate(135deg); }
-.petal:nth-child(5){ transform:translate(-50%,-100%) rotate(180deg); }
-.petal:nth-child(6){ transform:translate(-50%,-100%) rotate(225deg); }
-.petal:nth-child(7){ transform:translate(-50%,-100%) rotate(270deg); }
-.petal:nth-child(8){ transform:translate(-50%,-100%) rotate(315deg); }
-
-.center{
-position:absolute;
-width:85px;
-height:85px;
-background:#4e342e;
-border-radius:50%;
-top:60px;
-left:50%;
-transform:translateX(-50%);
-z-index:3;
-box-shadow:0 0 25px #000;
-}
-
-.leaf{
-position:absolute;
-width:90px;
-height:45px;
-background:#43a047;
-border-radius:0 90px 0 90px;
-top:240px;
-z-index:1;
-}
-
-.leaf.left{
-left:50%;
-transform:translateX(-100%) rotate(-35deg);
-}
-
-.leaf.right{
-left:50%;
-transform:rotate(35deg);
-}
+@keyframes moveStars{from{transform:translate(0,0);}to{transform:translate(-400px,-400px);}}
+.particles{position:absolute;width:100%;height:100%;pointer-events:none;z-index:1;}
+.particles span{position:absolute;width:4px;height:4px;background:gold;border-radius:50%;animation:fall linear infinite;}
+@keyframes fall{from{transform:translateY(-10px);opacity:1;}to{transform:translateY(100vh);opacity:0;}}
+.heart{font-size:45px;color:#ff0000;text-shadow:0 0 25px #ffd700,0 0 40px #ffcc00;animation:pulse 1.5s infinite;z-index:2;}
+@keyframes pulse{0%,100%{transform:scale(1);}50%{transform:scale(1.2);}}
+h1,h2,h3{text-align:center;z-index:2;}
+h1{color:#ff3b3b;font-size:32px;text-shadow:0 0 20px #ffcc00;margin-bottom:10px;}
+h2{color:#ffcc00;font-size:42px;text-shadow:0 0 25px red;margin-bottom:10px;}
+h3{color:#ff4d4d;font-size:28px;text-shadow:0 0 20px gold;margin-bottom:20px;}
+.anime-top{position:absolute;top:20px;right:20px;width:400px;max-width:40vw;z-index:2;}
+.anime-bottom{position:absolute;bottom:20px;left:20px;width:400px;max-width:40vw;z-index:2;}
+.anime-top img,.anime-bottom img{width:100%;height:auto;}
 </style>
 </head>
-
 <body>
 
-<!-- 🎵 Audio -->
 <audio controls loop>
-<source src="cancion.mp3" type="audio/mpeg">
+  <source src="cancion.mp3" type="audio/mpeg">
 </audio>
 
 <div class="particles"></div>
-
 <script>
 for(let i=0;i<40;i++){
-let span=document.createElement("span");
-span.style.left=Math.random()*100+"%";
-span.style.animationDuration=(4+Math.random()*4)+"s";
-span.style.animationDelay=Math.random()*5+"s";
-document.querySelector(".particles").appendChild(span);
+  let span=document.createElement("span");
+  span.style.left=Math.random()*100+"%";
+  span.style.animationDuration=(4+Math.random()*4)+"s";
+  span.style.animationDelay=Math.random()*5+"s";
+  document.querySelector(".particles").appendChild(span);
 }
 </script>
 
-<!-- 🖼 Personajes -->
 <div class="anime-top">
-<img src="senku.gif" alt="Senku">
+  <img src="senku.gif" alt="Senku">
 </div>
-
 <div class="anime-bottom">
-<img src="mao.gif" alt="Mao">
+  <img src="mao.gif" alt="Mao">
 </div>
 
 <h1>Para ti ❤️</h1>
@@ -268,40 +72,10 @@ document.querySelector(".particles").appendChild(span);
 <h3>Feliz San Valentín</h3>
 <div class="heart">❤️</div>
 
-<div class="flowers-container">
-<div class="flower">
-<div class="flower-wrapper">
-<div class="stem"></div>
-<div class="petals">
-<div class="petal"></div><div class="petal"></div>
-<div class="petal"></div><div class="petal"></div>
-<div class="petal"></div><div class="petal"></div>
-<div class="petal"></div><div class="petal"></div>
-</div>
-<div class="center"></div>
-<div class="leaf left"></div>
-<div class="leaf right"></div>
-</div>
-</div>
-
-<div class="flower">
-<div class="flower-wrapper">
-<div class="stem"></div>
-<div class="petals">
-<div class="petal"></div><div class="petal"></div>
-<div class="petal"></div><div class="petal"></div>
-<div class="petal"></div><div class="petal"></div>
-<div class="petal"></div><div class="petal"></div>
-</div>
-<div class="center"></div>
-<div class="leaf left"></div>
-<div class="leaf right"></div>
-</div>
-</div>
-</div>
-
 </body>
 </html>
+
+
 
 
 
