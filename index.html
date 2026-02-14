@@ -22,7 +22,7 @@ body{
   color:white;
 }
 
-/* Fondo estrellas */
+/* Estrellas */
 body::before{
   content:"";
   position:absolute;
@@ -99,12 +99,23 @@ h3{font-size:28px;color:#ff4d4d;text-shadow:0 0 20px gold;margin-bottom:20px;z-i
 .anime-bottom img{
   width:100%;
 }
+
+/* Botón música */
+#btnMusica{
+  margin-top:20px;
+  padding:10px 20px;
+  border:none;
+  border-radius:10px;
+  background:gold;
+  font-weight:bold;
+  cursor:pointer;
+  z-index:3;
+}
 </style>
 </head>
 
 <body>
 
-<!-- AUDIO -->
 <audio id="musica" loop preload="auto">
   <source src="cancion.mp3" type="audio/mpeg">
 </audio>
@@ -124,11 +135,13 @@ h3{font-size:28px;color:#ff4d4d;text-shadow:0 0 20px gold;margin-bottom:20px;z-i
 <h3>Feliz San Valentín</h3>
 <div class="heart">❤️</div>
 
+<button id="btnMusica">🎵 Activar Música</button>
+
 <script>
 // FLORES
 const flowersContainer = document.getElementById("flowers");
 
-for(let i=0;i<25;i++){
+for(let i=0;i<30;i++){
   const flower = document.createElement("div");
   flower.classList.add("flower");
   flower.innerHTML = "🌸";
@@ -138,16 +151,31 @@ for(let i=0;i<25;i++){
   flowersContainer.appendChild(flower);
 }
 
-// MÚSICA (requiere clic por seguridad del navegador)
+// MÚSICA
 const musica = document.getElementById("musica");
+const btn = document.getElementById("btnMusica");
 
+// Intento automático
+window.addEventListener("load", function(){
+  musica.play().catch(()=>{});
+});
+
+// Botón manual (seguro 100%)
+btn.addEventListener("click", function(){
+  musica.play();
+  btn.style.display="none";
+});
+
+// Respaldo: cualquier clic
 document.body.addEventListener("click", function(){
   musica.play();
-}, { once: true });
+}, { once:true });
 </script>
 
 </body>
 </html>
+
+
 
 
 
